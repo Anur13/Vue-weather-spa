@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/search">Search</router-link>
     </div>
     <router-view/>
   </div>
@@ -15,10 +15,13 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 #nav {
-  padding: 30px;
+  padding: 30px 0;
+  width: 100%;
 }
 
 #nav a {

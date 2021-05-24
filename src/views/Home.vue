@@ -1,18 +1,26 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CitiesWeatherList :cities="cities" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import { getHomeCities } from '../utils/weatherApi'
+import CitiesWeatherList from '@/components/CitiesWeather/CitiesWeatherList'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    CitiesWeatherList
+  },
+  data() {
+    return {
+      cities: []
+    }
+  },
+  async created() {
+    const list = await getHomeCities()
+    this.cities = [...list]
   }
 }
 </script>
